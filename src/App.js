@@ -5,7 +5,8 @@ import GlobalContext from "./context/GlobalContext";
 import Sidebar from "./component/Sidebar";
 import EventModal from "./component/EventModal";
 import Grid from "@mui/material/Grid";
-import Navbar from "./component/Navbar";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   // initialized the currentMonth with the getMonth function created at utilies
@@ -15,7 +16,7 @@ function App() {
     setCurrentMonth(getMonth(monthIndex));
   }, [monthIndex]);
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
       <Grid
         container
         direction="row"
@@ -33,7 +34,7 @@ function App() {
         </Grid>
         <Grid item>{showEventModal && <EventModal />}</Grid>
       </Grid>
-    </>
+    </DndProvider>
   );
 }
 

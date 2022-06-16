@@ -8,14 +8,7 @@ export default function Labels() {
   const { labels, updateLabel } = useContext(GlobalContext);
   return (
     <React.Fragment>
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        style={{
-          border: "2px solid red",
-        }}
-      >
+      <Grid container direction="column" justifyContent="center">
         <Grid item>
           <p>
             <strong>Calendars</strong>
@@ -23,45 +16,57 @@ export default function Labels() {
         </Grid>
 
         <Grid item>
-          <label className="items-center mt-3 block">
+          <label>
             <input type="checkbox" checked="true" />
             <span>
-              <strong>Admin's Calendar</strong>
+              <p className="mb-5 mt-5">
+                <strong>Admin's Calendar</strong>
+              </p>
             </span>
           </label>
         </Grid>
-        <Grid
-          item
-          className="mt-5"
-        >
-          <p>Interview Status</p>
+        <Grid item>
+          <p className="mt-5">
+            <strong>Interview Status</strong>
+          </p>
         </Grid>
         {labels.map(({ label: lbl, checked }, idx) => (
-          <Grid item>
-            <label key={idx} className="items-center mt-3 block">
+          <Grid item className="mt-5">
+            <label key={idx}>
               <input
                 type="checkbox"
                 checked={checked}
                 onChange={() => updateLabel({ label: lbl, checked: !checked })}
                 className={`form-checkbox h-5 w-5 text-${lbl}-400 rounded focus:ring-0 cursor-pointer`}
               />
-              <span className="ml-2 text-gray-700 capitalize">{lbl}</span>
+              <span
+                style={{
+                  borderRadius: "50%",
+                  backgroundColor: lbl,
+                  border: "2px solid black",
+                  width: "100%",
+                }}
+              >
+                ...
+              </span>
             </label>
           </Grid>
         ))}
       </Grid>
       <Grid item>
-        <p>Interview Type</p>
+        <p className="mb-5 mt-5">
+          <strong>Interview Type</strong>
+        </p>
       </Grid>
 
       <Grid item>
-        <label className="items-center mt-3 block">
+        <label className="mt-5">
           <input type="checkbox" />
           <span>All</span>
         </label>
       </Grid>
       <Grid item>
-        <label className="items-center mt-3 block">
+        <label className="mt-5">
           <input type="checkbox" />
           <span>
             {" "}
@@ -71,7 +76,7 @@ export default function Labels() {
         </label>
       </Grid>
       <Grid item>
-        <label className="items-center mt-3 block">
+        <label className="mt-5">
           <input type="checkbox" />
           <span>
             <i class="uil uil-mobile-android"></i>phone
@@ -79,7 +84,7 @@ export default function Labels() {
         </label>
       </Grid>
       <Grid item>
-        <label className="items-center mt-3 block">
+        <label className="mt-5">
           <input type="checkbox" />
           <span>
             <i class="uil uil-laptop"></i>Online
