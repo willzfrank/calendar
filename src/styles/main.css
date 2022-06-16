@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--fontColor);
+}
+
+.border {
+  border: 1px dashed var(--borderBgColor);
+}
+
+:root {
+  --bodyBgColor: #fffbfb;
+  --arrowBgColor: #5e5ef9;
+  --castBgColor: #42b81f;
+  --availableBgColor: #7a7a7b;
+  --resheduledBgColor: #3d98f8;
+  --iconBgColor: #ec8080;
+  --borderBgColor: #e7e7e7;
+  --blueCheckBox: #e7e7e7;
+  --fontColor: #3b3f42;
+  --gridBgColor: #f0f0f1;
+}
+
+.mt-5 {
+  margin-top: 10px;
+}
+
+.currentDayBg {
+  background-color: var(--arrowBgColor) !important;
+  padding: 0.2rem;
+  width: 30%;
+  height: 100%;
+  color: var(--bodyBgColor) !important;
+
+  border-radius: 50%;
+}
+
+.calendarHeaderBtn {
+  border-color: var(--borderBgColor);
+}
+
+.eventModalForm {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid var(--borderBgColor);
+}
+
+.eventModalForm--header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.3rem 0;
+  background-color: aliceblue;
+}
+
+.eventModalForm--icon {
+  cursor: pointer;
+  font-size: 130%;
+}
+
+input[type="text"] {
+  font-family: "Montserrat", sans-serif;
+}
+
+.red {
+  height: 30px;
+}
+
+.selected--events {
+  color: white !important;
+  border: 2px solid var(--borderBgColor);
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 5px;
+  margin-bottom: 5px;
+}
